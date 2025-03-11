@@ -43,5 +43,12 @@ if st.button("Registrar Pedido"):
         st.warning("Por favor, ingresa tu DNI.")
 archivo_pedidos = "pedidos.xlsx"
 st.write(f"Guardando pedidos en: {archivo_pedidos}")
+if st.button("Ver pedidos"):
+    try:
+        pedidos = pd.read_excel(archivo_pedidos)
+        st.dataframe(pedidos)
+    except FileNotFoundError:
+        st.warning("⚠️ Aún no hay pedidos registrados.")
+
 
 
