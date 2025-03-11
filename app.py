@@ -41,4 +41,7 @@ if st.button("Registrar Pedido"):
             st.error("❌ DNI no encontrado. Verifica tu número.")
     else:
         st.warning("Por favor, ingresa tu DNI.")
+archivo_pedidos = "pedidos.xlsx"
+st.write(f"Guardando pedidos en: {archivo_pedidos}")
+
 
