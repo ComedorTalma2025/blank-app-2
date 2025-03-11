@@ -41,3 +41,22 @@ if st.button("Registrar Pedido"):
             st.error("❌ DNI no encontrado. Verifica tu número.")
     else:
         st.warning("Por favor, ingresa tu DNI.")
+import sqlite3
+
+conn = sqlite3.connect("pedidos.db")
+cursor = conn.cursor()
+
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS pedidos (
+        dni TEXT,
+        hora TEXT
+    )
+""")
+
+dni = "12345678"
+hora = "2025-03-11 12:00:00"
+
+cursor.execute("INSERT INTO pedidos (dni, hora) VALUES (?, ?)", (dni, hora))
+conn.commit()
+conn.close()
+
