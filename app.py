@@ -4,8 +4,8 @@ import pandas as pd
 from datetime import datetime
 
 # Cargar la base de datos de usuarios (DNI registrados)
-def cargar_dnis(usuarios.xlsx):
-    return pd.read_excel(usuarios.xlsx)
+def cargar_dnis("usuarios.xlsx"):
+    return pd.read_excel("usuarios.xlsx")
 
 # Guardar el registro del pedido
 def registrar_pedido(dni, archivo_salida):
